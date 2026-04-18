@@ -2,7 +2,7 @@ package model;
 
 import enums.FuncionarioStatus;
 
-public abstract class FuncionarioPJ extends Funcionario {
+public class FuncionarioPJ extends Funcionario {
 
     private String mei;
 
