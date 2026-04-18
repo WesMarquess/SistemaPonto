@@ -2,7 +2,7 @@ package model;
 
 import enums.FuncionarioStatus;
 
-public abstract class FuncionarioCLT extends Funcionario {
+public class FuncionarioCLT extends Funcionario {
 
     private Double bonificacao;
 
