@@ -10,7 +10,7 @@ public enum FuncionarioStatus {
     FERIAS {
         @Override
         public boolean podeReceberSalario() {
-            return false;
+            return true;
         }
     },
     INATIVO {

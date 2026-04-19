@@ -1,12 +1,14 @@
 package service;
 
-import model.Funcionario;
+import enums.FuncionarioStatus;
+import model.funcionarios.Funcionario;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class FuncionarioService {
 
+    FuncionarioStatus funcionarioStatus;
     private Map<Long, Funcionario> funcionarioMap = new HashMap<>();
 
 
@@ -37,6 +39,11 @@ public class FuncionarioService {
         for (Funcionario funcionario : funcionarioMap.values()) {
             System.out.println(funcionario);
         }
+    }
+
+    public void alterarStatus(Long id, FuncionarioStatus status) {
+        Funcionario funcionario = buscaPorId(id);
+        funcionario.setFuncionarioStatus(status);
     }
 }
 

@@ -1,15 +1,17 @@
-package model;
+package model.funcionarios;
 
 import enums.FuncionarioStatus;
+import enums.TipoFuncionario;
+import model.empresa.Empresa;
 
 public class FuncionarioPJ extends Funcionario {
 
-    public FuncionarioPJ(String nome, Double pisoSalarioal, String cargo, Empresa empresa, FuncionarioStatus funcionarioStatus) {
-        super(nome, pisoSalarioal, cargo, empresa, funcionarioStatus);
+    public FuncionarioPJ(String nome, Double pisoSalarial, Integer horasMensais, String cargo, Empresa empresa, TipoFuncionario tipo, FuncionarioStatus funcionarioStatus) {
+        super(nome, pisoSalarial, horasMensais, cargo, empresa, tipo, funcionarioStatus);
     }
 
     @Override
-    public String calcularHora() {
-        return "0.0";
+    public double calcularHora() {
+        return 0.0;
     }
 }

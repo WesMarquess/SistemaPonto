@@ -1,6 +1,8 @@
-package model;
+package model.funcionarios;
 
 import enums.FuncionarioStatus;
+import enums.TipoFuncionario;
+import model.empresa.Empresa;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -14,15 +16,19 @@ public abstract class Funcionario {
     protected Integer HorasMensais;
     protected String cargo;
     protected Empresa empresa;
+    protected TipoFuncionario tipo;
     protected FuncionarioStatus funcionarioStatus;
 
-    public Funcionario(String nome, Double pisoSalarial, String cargo, Empresa empresa, FuncionarioStatus funcionarioStatus) {
+    public Funcionario(String nome, Double pisoSalarial, Integer horasMensais,
+                       String cargo, Empresa empresa, TipoFuncionario tipo,
+                       FuncionarioStatus funcionarioStatus) {
         this.id = (long) contadorId.getAndIncrement();
         this.nome = nome;
         this.pisoSalarial = pisoSalarial;
-        this.HorasMensais = 220;
+        HorasMensais = horasMensais;
         this.cargo = cargo;
         this.empresa = empresa;
+        this.tipo = tipo;
         this.funcionarioStatus = funcionarioStatus;
     }
 
@@ -66,7 +72,7 @@ public abstract class Funcionario {
         this.funcionarioStatus = funcionarioStatus;
     }
 
-    public abstract String calcularHora();
+    public abstract double calcularHora();
 
     @Override
     public String toString() {
