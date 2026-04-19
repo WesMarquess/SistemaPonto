@@ -1,15 +1,17 @@
-package model;
+package model.funcionarios;
 
 import enums.FuncionarioStatus;
+import enums.TipoFuncionario;
+import model.empresa.Empresa;
 
 public class FuncionarioCLT extends Funcionario {
 
-    public FuncionarioCLT(String nome, Double pisoSalarioal, String cargo, Empresa empresa, FuncionarioStatus funcionarioStatus) {
-        super(nome, pisoSalarioal, cargo, empresa, funcionarioStatus);
+    public FuncionarioCLT(String nome, Double pisoSalarial, Integer horasMensais, String cargo, Empresa empresa, TipoFuncionario tipo, FuncionarioStatus funcionarioStatus) {
+        super(nome, pisoSalarial, horasMensais, cargo, empresa, tipo, funcionarioStatus);
     }
 
     @Override
-    public String calcularHora() {
-        return String.format("%.2f", pisoSalarial / getHorasMensais());
+    public double calcularHora() {
+        return pisoSalarial / getHorasMensais();
     }
 }
